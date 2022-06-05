@@ -4,8 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class proveedor extends Model
+class Proveedor extends Model
 {
     //
-    protected $table = 'refaccion';
+    protected $table = 'proveedor';
+    protected $fillable = [
+        'proveedor_nombre', 
+        'proveedor_direccion', 
+        'proveedor_telefono', 
+        'proveedor_telefono_2',
+        'proveedor_correo'
+    ];
 }

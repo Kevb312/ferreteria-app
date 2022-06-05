@@ -26,14 +26,33 @@
 	      <li class="nav-item">
 	        <a class="nav-link" href="#">Home </a>
 	      </li>
-
-	      <li class="nav-item">
-	        <a class="nav-link" href="{{route('marcas')}}">Agregar refacción</a>
+	      
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Refacciones
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	          <a class="nav-link" href="{{route('marcas')}}">Agregar refacción</a>
+	          <a class="nav-link" href="{{route('refaccionesList')}}">Lista de refacciones</a>
+	        </div>
 	      </li>
 
-  	      <li class="nav-item">
-	        <a class="nav-link" href="{{route('refaccionesList')}}">Lista de refacciones</a>
+  	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Proveedores
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	          <a class="nav-link" href="{{route('proveedorForm')}}">Agregar proveedor</a>
+
+	          <a class="nav-link" href="{{route('proveedorList')}}">Gestionar proveedores</a>
+
+	          <div class="dropdown-divider"></div>
+
+	          <a class="nav-link" href="{{route('sucursalForm')}}">Agregar sucursal</a>
+	          <a class="nav-link" href="{{route('sucursalList')}}">Gestionar sucursales</a>
+	        </div>
 	      </li>
+
 	    </ul>
 	  </div>
 	</nav>
