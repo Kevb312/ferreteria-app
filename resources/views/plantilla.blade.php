@@ -43,12 +43,11 @@
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	          <a class="nav-link" href="{{route('proveedorForm')}}">Agregar proveedor</a>
-
-	          <a class="nav-link" href="{{route('proveedorList')}}">Gestionar proveedores</a>
+	          <a class="nav-link" href="{{route('sucursalForm')}}">Agregar sucursal</a>
 
 	          <div class="dropdown-divider"></div>
 
-	          <a class="nav-link" href="{{route('sucursalForm')}}">Agregar sucursal</a>
+  	          <a class="nav-link" href="{{route('proveedorList')}}">Gestionar proveedores</a>
 	          <a class="nav-link" href="{{route('sucursalList')}}">Gestionar sucursales</a>
 	        </div>
 	      </li>

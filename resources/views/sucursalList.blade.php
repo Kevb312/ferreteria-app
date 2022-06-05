@@ -19,6 +19,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Proveedor</th>
                         <th>Nombre de la sucursal</th>
                         <th>Ver detalles</th>
                         <th>Editar</th>
@@ -29,6 +30,7 @@
                     @foreach($sucursales as $sucursal)
                     <tr>
                         <td>{{$sucursal->sucursal_id}}</td>
+                        <td>{{$sucursal->proveedor_nombre}}</td>
                         <td id="idProveedor{{$sucursal->sucursal_id}}"> {{$sucursal->sucursal_nombre}}</td>
                         <input type="hidden" id="nameSucursal{{$sucursal->sucursal_id}}" value="{{$sucursal->sucursal_nombre}}">
                         <input type="hidden" id="direccionSucursal{{$sucursal->sucursal_id}}" value="{{$sucursal->sucursal_direccion}}">
@@ -61,6 +63,7 @@
                 <tfoot>
                     <tr>
                         <th>ID</th>
+                        <th>Proveedor</th>
                         <th>Nombre de la sucursal</th>
                         <th>Ver detalles</th>
                         <th>Editar</th>

@@ -39,13 +39,30 @@ class sucursalController extends Controller
     }
 
     public function getList(){
-        $sucursales = Sucursal::get();
-
+        $sucursales = Sucursal::select(
+                    "sucursal_id",
+                    "sucursal_nombre",
+                    "sucursal_direccion",
+                    "sucursal_telefono",
+                    "sucursal_telefono_2",
+                    "sucursal_correo",
+                    "proveedor_nombre")
+                    ->leftjoin("proveedor", "fk_proveedor_id", "=", "proveedor_id")->get();
+        
         return view('sucursalList', compact('sucursales'));
     }
 
     public function getDetalle($id){
-        $sucursalDetalle = Sucursal::where('sucursal_id', $id)->get();
+        $sucursalDetalle = Sucursal::select(
+                    "sucursal_id",
+                    "sucursal_nombre",
+                    "sucursal_direccion",
+                    "sucursal_telefono",
+                    "sucursal_telefono_2",
+                    "sucursal_correo",
+                    "proveedor_nombre")
+                    ->where('sucursal_id', $id)
+                    ->leftjoin("proveedor", "fk_proveedor_id", "=", "proveedor_id")->get();
 
         return view('detalleSucursal', compact('sucursalDetalle'));
     }

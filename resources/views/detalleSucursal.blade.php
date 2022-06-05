@@ -23,6 +23,11 @@
                             <td>Id de la sucursal</td>
                             <td>{{$sucursal->sucursal_id}}</td>
                         </tr>
+
+                        <tr>
+                            <td>Proveedor</td>
+                            <td>{{$sucursal->proveedor_nombre}}</td>
+                        </tr>
                         <tr>
                             <td>Nombre</td>
                             <td>{{$sucursal->sucursal_nombre}}</td>
