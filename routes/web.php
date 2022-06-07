@@ -28,7 +28,11 @@ Route::post('guardar-refaccion/{id}', 'marcasController@store')->name('guardarRe
 #refacciones
 Route::get('/refacciones-list', 'refaccionesController@getRefacciones')->name('refaccionesList');
 
+Route::get('refaccion-cotizar/{id}', 'refaccionesController@getCotizacion')->name('cotizarRefaccion');
+
 Route::post('/refacciones-update', 'refaccionesController@updateRefaccion')->name('updateRefaccion');
+
+Route::post('guardar-cotizacion-refaccion', 'refaccionesController@saveCotizacion')->name('guardarCotizacionRefaccion');
 
 
 #proveedores
@@ -57,3 +61,26 @@ Route::post('save-sucursal', 'sucursalController@post')->name('guardarSucursal')
 
 Route::post('sucursal-update', 'sucursalController@update')->name('updateSucursal');
 
+
+#cotizaciones
+
+Route::get('cotizacion-inicial', 'cotizacionController@getForm')->name('nuevaCotizacionForm');
+
+Route::get('cotizacion', 'cotizacionController@getCotizacion')->name('cotizacion');
+
+Route::get('cotizacion-marca', 'cotizacionController@getMarcas')->name('cotizacionMarcaRefaccion');
+
+Route::get('cotizacion-refacciones/{id}', 'cotizacionController@getRefacciones')->name('consultaRefaccionCotizacion');
+
+Route::get('cotizacion-detalle/{id}', 'cotizacionController@cotizacionDetalle')->name('detalleCotizacion');
+
+Route::get('generar-pdf', 'cotizacionController@generarPDF')->name('generarPDF');
+
+Route::get('finalizar', 'cotizacionController@finalizar')->name('finalizarCotizacion');
+
+Route::post('cotizacion-en-Curso', 'cotizacionController@cotizacion')->name('cotizacionEnCurso');
+
+Route::post('cotizacion-guardar', 'cotizacionController@cotizacionGuardar')->name('guardarCotizacion');
+
+#Prueba dompdf
+Route::get('generate-pdf', 'PDFController@generatePDF');

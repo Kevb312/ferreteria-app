@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Marca;
 use App\Refaccion;
+use App\Proveedor;
+use App\refaccionProveedor;
 use DB;
 
 class refaccionesController extends Controller
@@ -86,6 +88,33 @@ class refaccionesController extends Controller
                     ]);
     
         return redirect()->route('refaccionesList'); 
+    }
+
+    public function getCotizacion($id){
+        $proveedores = Proveedor::select("proveedor_id", "proveedor_nombre")->get();
+        return view('cotizarRefaccion', compact('id', 'proveedores'));
+    }
+
+    public function saveCotizacion(Request $request){
+
+        request()->validate([
+            'inputID' => 'required',
+            'inputProveedor' => 'required',
+            'inputDate' => 'required',
+            'inputPrecio' => 'required',
+        ]);
+
+        refaccionProveedor::create([
+                'fk_refaccion_id' => $request->inputID,
+                'fk_proveedor_id' => $request->inputProveedor,
+                'created_at' => $request->inputDate,
+                'precio' => $request->inputPrecio,
+        ]);
+
+    
+        return redirect()->route('refaccionesList'); 
+
+
     }
 
 

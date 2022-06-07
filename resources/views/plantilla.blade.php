@@ -23,8 +23,8 @@
 	  <div class="collapse navbar-collapse" id="navbarNav">
 	    <ul class="navbar-nav">
 
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Home </a>
+  	      <li class="nav-item">
+	        <a class="nav-link" href="{{route('nuevaCotizacionForm')}}">Cotizaciones </a>
 	      </li>
 	      
 	      <li class="nav-item dropdown">

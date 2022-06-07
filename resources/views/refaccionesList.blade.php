@@ -25,6 +25,7 @@
                         <th>Imagen</th>
                         <th>Fecha de creación</th>
                         <th>Acciones</th>
+                        <th>Click para iniciar cotización</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,6 +46,9 @@
                         	<button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit" onclick="recibir({{$refaccion->refaccion_id}});">Editar</button>
                         	<button  type="button" class="btn btn-secondary">Borrar</button>
                         </td>
+                        <td>
+                            <a href="{{route('cotizarRefaccion', $refaccion->refaccion_id)}}">Seleccionar</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -57,6 +61,7 @@
                         <th>Imagen</th>
                         <th>Fecha de creación</th>
                         <th>Acciones</th>
+                        <th>Click para iniciar cotización</th>
                     </tr>
                 </tfoot>
             </table>

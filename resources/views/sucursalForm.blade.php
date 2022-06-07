@@ -21,7 +21,7 @@
 			      <option value="{{$proveedor->proveedor_id}}">{{$proveedor->proveedor_nombre}}</option>
 			    @endforeach
 			    </select>
-		  </div>
+		      </div>
           </div>
 
         <div class="form-group">
