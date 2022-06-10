@@ -44,7 +44,7 @@
                         <td>
 
                         	<button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit" onclick="recibir({{$refaccion->refaccion_id}});">Editar</button>
-                        	<button  type="button" class="btn btn-secondary">Borrar</button>
+                        	<a href="{{route('borrarRefaccion', $refaccion->refaccion_id)}}"><button  type="button" class="btn btn-secondary">Borrar</button></a>
                         </td>
                         <td>
                             <a href="{{route('cotizarRefaccion', $refaccion->refaccion_id)}}">Seleccionar</a>

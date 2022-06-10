@@ -29,6 +29,18 @@ class refaccionesController extends Controller
         return view('refaccionesList', compact('allRefacciones'));
     }
 
+    public function delete($id){
+        #Borramos la imagen
+        $oldName = Refaccion::select("refaccion_imagen")->where("refaccion_id",$id)->first();
+        if($oldName->refaccion_imagen != "N-A.png"){
+            $image_path = public_path().'/public/img/'.$oldName->refaccion_imagen;
+            unlink($image_path);
+        }
+        $delete = Refaccion::where("refaccion_id", $id)->delete();
+
+        return redirect()->route("refaccionesList");
+    }
+
     public function updateRefaccion(Request $request){
 
         $oldName = Refaccion::select("refaccion_imagen")->where("refaccion_id", $request->inputIDHidden)->first();

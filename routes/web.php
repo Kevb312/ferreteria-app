@@ -32,7 +32,11 @@ Route::get('refaccion-cotizar/{id}', 'refaccionesController@getCotizacion')->nam
 
 Route::post('/refacciones-update', 'refaccionesController@updateRefaccion')->name('updateRefaccion');
 
+Route::get('borrrar-refaccion/{id}', 'refaccionesController@delete')->name('borrarRefaccion');
+
 Route::post('guardar-cotizacion-refaccion', 'refaccionesController@saveCotizacion')->name('guardarCotizacionRefaccion');
+
+
 
 
 #proveedores
